@@ -6,7 +6,7 @@ interface SnippetDetailPageProps {
   /* Params is async, set type as such */
   params: Promise<{ id: string }>;
 }
-async function SnippetDetailPage(props: SnippetDetailPageProps) {
+export default async function SnippetDetailPage(props: SnippetDetailPageProps) {
   const { id } = await props.params;
 
   await new Promise((r) => setTimeout(r, 2000));
@@ -43,5 +43,12 @@ async function SnippetDetailPage(props: SnippetDetailPageProps) {
     </div>
   );
 }
-
-export default SnippetDetailPage;
+//function to make dynamic (due to [id]) pages static with cached data and control re-cache on changes instead (done in actions with revalidate path)
+export async function generateStaticParams() {
+  const snippets = await db.snippet.findMany();
+  return snippets.map((snippet) => {
+    return {
+      id: snippet.id.toString()
+    };
+  });
+}

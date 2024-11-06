@@ -3,7 +3,7 @@ import Editor from '@monaco-editor/react';
 import * as actions from '@/actions';
 //interface based on spelling of table name. Naming convention to consider here.
 import type { Snippet } from '@prisma/client';
-import { startTransition, useState } from 'react';
+import { useState } from 'react';
 
 interface SnippetFormProps {
   snippet: Snippet;
