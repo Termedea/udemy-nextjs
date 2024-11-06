@@ -1,10 +1,11 @@
 import { notFound } from 'next/navigation';
 import { db } from '@/db';
-interface SnippetDetailProps {
+import Link from 'next/link';
+interface SnippetDetailPageProps {
   /* Params is async, set type as such */
   params: Promise<{ id: string }>;
 }
-async function SnippetDetail(props: SnippetDetailProps) {
+async function SnippetDetailPage(props: SnippetDetailPageProps) {
   const { id } = await props.params;
 
   await new Promise((r) => setTimeout(r, 2000));
@@ -21,8 +22,12 @@ async function SnippetDetail(props: SnippetDetailProps) {
       <div className="flex my-2 justify-between items-center">
         <h1 className="text-2xl font-bold">{snippet.title}</h1>
         <div className="flex gap-2">
-          <button className="p-2 border rounded">Edit</button>
-          <button className="p-2 border rounded">Delete</button>
+          <Link href={`/snippets/${snippet.id}/edit`} className="p-2 border rounded">
+            Edit
+          </Link>
+          <Link href="" className="p-2 border rounded">
+            Delete
+          </Link>
         </div>
       </div>
       <pre className="p-3 border rounded bg-gray-200 border-gray-400">
@@ -32,4 +37,4 @@ async function SnippetDetail(props: SnippetDetailProps) {
   );
 }
 
-export default SnippetDetail;
+export default SnippetDetailPage;

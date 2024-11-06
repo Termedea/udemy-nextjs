@@ -7,7 +7,7 @@ import { db } from '@/db';
  *
  * client component can't show server components as children. rendered once on the server.
  */
-function SnippetCreate() {
+function SnippetCreatePage() {
   async function createSnippet(formData: FormData) {
     //this needs to be a server action
     //directive used by nextjs to tell it it's a server action.
@@ -53,4 +53,4 @@ function SnippetCreate() {
   );
 }
 
-export default SnippetCreate;
+export default SnippetCreatePage;
