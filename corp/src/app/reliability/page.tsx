@@ -1,10 +1,15 @@
+import Card from '@/components/Card';
+import HeroImage from '@/components/HeroImage';
+import reliabilityImg from 'public/images/reliability.jpg';
+
 export default function ReliabilityPage() {
   return (
     <main className="page">
-      <div className="card">
-        <h1>Reliability</h1>
-        <p style={{ color: 'var(--muted)', marginTop: '0.75rem' }}>Reliability page</p>
-      </div>
+      <HeroImage alt="Car Factory" image={reliabilityImg} />
+      <Card>
+        <h2>We're reliable</h2>
+        <p>Reliability page</p>
+      </Card>
     </main>
   );
 }

@@ -1,21 +1,18 @@
 import Link from 'next/link';
+
 export default function Header() {
   return (
-    <div style={{ color: 'var(--muted)', marginTop: '0.75rem' }}>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
+    <div className="bg-background/80 backdrop-blur-sm border-b border-foreground/10 fixed w-full z-50 py-xs">
+      <nav className="w-2/3 flex mx-auto items-center justify-between h-16">
+        <Link className="font-serif italic text-foreground text-5xl p-sm" href="/">
+          Awesome logo
+        </Link>
+        <div className="flex gap-4 justify-end">
           <Link href="/performance">Performance</Link>
-        </li>
-        <li>
           <Link href="/reliability">Reliability</Link>
-        </li>
-        <li>
           <Link href="/scale">Scale</Link>
-        </li>
-      </ul>
+        </div>
+      </nav>
     </div>
   );
 }

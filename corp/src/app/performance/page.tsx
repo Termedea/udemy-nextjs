@@ -1,10 +1,15 @@
+import Card from '@/components/Card';
+import HeroImage from '@/components/HeroImage';
+import performanceImg from 'public/images/performance.jpg';
+
 export default function PerformancePage() {
   return (
     <main className="page">
-      <div className="card">
-        <h1>Performance</h1>
-        <p style={{ color: 'var(--muted)', marginTop: '0.75rem' }}>Performance page</p>
-      </div>
+      <HeroImage alt="Cloud Performance" image={performanceImg} />
+      <Card>
+        <h2>Cloud Performance</h2>
+        <p>Performance page</p>
+      </Card>
     </main>
   );
 }
