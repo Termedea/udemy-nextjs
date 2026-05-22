@@ -19,8 +19,7 @@ export default function SnippetCreatePage() {
     redirect('/');
   }
   return (
-    //action refers to function
-
+    //action refers to function run on server for handling form submit
     <form action={createSnippet}>
       <h3 className="font-bold my-3">Create a Snippet</h3>
       <div className="flex flex-col gap-4">
