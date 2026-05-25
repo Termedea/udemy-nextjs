@@ -1,4 +1,5 @@
 import { db } from '@/db';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
 export default function SnippetCreatePage() {
@@ -35,9 +36,14 @@ export default function SnippetCreatePage() {
           </label>
           <textarea name="code" className="border rounded p-2 w-full"></textarea>
         </div>
-        <button type="submit" className="rounded p-2 bg-blue-600 focus:bg-blue-700">
-          Create
-        </button>
+        <div className="flex justify-end gap-2">
+          <button type="submit" className="rounded p-2 bg-blue-500 hover:bg-blue-700">
+            Create
+          </button>
+          <Link href="/" className="rounded p-2 bg-gray-700 hover:bg-gray-600">
+            Cancel
+          </Link>
+        </div>
       </div>
     </form>
   );
