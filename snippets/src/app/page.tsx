@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <div>
       <div className="mt-6 flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold mb-4">Homepage</h1>
+        <h2 className="text-2xl font-bold mb-4">All Snippets</h2>
         <button>
           <Link href="/snippets/new" className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded">
             Create new snippet

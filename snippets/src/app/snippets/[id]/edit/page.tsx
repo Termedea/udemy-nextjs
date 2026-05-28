@@ -18,7 +18,7 @@ export default async function SnippetEditPage(props: SnippetEditPageProps) {
   }
 
   return (
-    <div className="p-4 my-4 flex flex-col gap-4">
+    <div className="my-4 flex flex-col gap-4">
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-bold">{snippet?.title}</h2>
       </div>

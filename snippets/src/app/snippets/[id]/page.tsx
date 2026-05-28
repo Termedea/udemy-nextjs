@@ -2,7 +2,7 @@
 import { notFound } from 'next/navigation';
 import { db } from '@/db';
 import Link from 'next/link';
-import * as actions from '@/actions';
+import * as actions from '@/actions/snippets';
 interface SnippetShowPageProps {
   //params are always strings
   params: Promise<{
@@ -22,9 +22,9 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
     return notFound();
   }
   return (
-    <div className="p-4 my-4">
+    <div className="my-4">
       <div className="flex justify-between items-center">
-        <h2 className="text-xl font-bold">{snippet?.title}</h2>
+        <h2 className="text-2xl font-bold mb-4">{snippet?.title}</h2>
         <div className="flex gap-2">
           <Link href={`/snippets/${id}/edit`} className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded">
             Edit
