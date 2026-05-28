@@ -43,3 +43,10 @@ export default async function SnippetShowPage(props: SnippetShowPageProps) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+  const snippets = await db.snippet.findMany({ select: { id: true } });
+
+  //Fetch all snippets to return ids. Empty array would just turn it into a static page. Params need to be strings, otherwise error.
+  return snippets.map((snippet) => ({ id: snippet.id.toString() }));
+}

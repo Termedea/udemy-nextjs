@@ -1,17 +1,20 @@
 'use server';
 import { db } from '@/db';
-
+import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
 export async function editSnippet(id: number, code: string) {
   await db.snippet.update({ where: { id }, data: { code } });
 
+  //added static params for the dynamic routes, so added revalidatepath here to control that caching too.
+  revalidatePath(`/snippets/${id}`);
   redirect(`/snippets/${id}`);
 }
 
 export async function deleteSnippet(id: number) {
   await db.snippet.delete({ where: { id } });
 
+  revalidatePath(`/`);
   redirect(`/`);
 }
 
@@ -33,7 +36,7 @@ export async function createSnippet(formState: { message: string }, formData: Fo
       return { message: 'Code must be at least 10 characters long.' };
     }
     //Create a new record in the database
-    const snippet = await db.snippet.create({ data: { title, code } });
+    await db.snippet.create({ data: { title, code } });
 
     //throw new Error('This is an error');
   } catch (error: unknown) {
@@ -44,6 +47,7 @@ export async function createSnippet(formState: { message: string }, formData: Fo
       return { message: 'An unknown error occurred while creating the snippet. Please try again.' };
     }
   }
+  revalidatePath(`/`);
   //Redirect user back to root
   redirect('/');
 }
