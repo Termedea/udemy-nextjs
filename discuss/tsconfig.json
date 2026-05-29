@@ -12,6 +12,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    //error message: "x is declared but its value is never read. ts(6133)",
+    "noUnusedLocals": false,
     "incremental": true,
     "plugins": [
       {
