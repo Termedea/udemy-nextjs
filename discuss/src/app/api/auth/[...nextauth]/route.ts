@@ -5,4 +5,4 @@
 //export async function POST() {}
 
 //both import and export in same statement.
-export { GET, POST } from '@/auth';
+export { GET, POST } from '@/helpers/auth';
