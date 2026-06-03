@@ -18,6 +18,8 @@ export const {
   signOut,
   signIn
 } = NextAuth({
+  //needed for testing in built dev mode. Trusted domain can't always be determined for localhost. This should be handled differently in production.
+  trustHost: true,
   adapter: PrismaAdapter(db),
   providers: [
     GitHub({
@@ -29,7 +31,6 @@ export const {
   callbacks: {
     //usually not needed, fixing i a bug in nextauth
     async session({ session, user }: any) {
-      console.log(session, user);
       if (session && user) {
         session.user.id = user.id;
       }

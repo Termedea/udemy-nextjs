@@ -1,3 +1,3 @@
-export default function TopicShowPage({ params }: { params: { topicSlug: string } }) {
-  return <div>Topic Show Page: {params.topicSlug}</div>;
+export default function TopicShowPage() {
+  return <div>Topic Show Page</div>;
 }
