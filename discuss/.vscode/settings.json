@@ -1,3 +1,24 @@
 {
-  "prisma.pinToPrisma6": true
+  "prisma.pinToPrisma6": true,
+  "files.exclude": {
+    "*.config.*": true,
+    ".eslintrc*": true,
+
+    "*lock.json": true,
+    "next-env.d.ts": true,
+    "globals.d.ts": true,
+    "tsconfig.json": true,
+    "README.md": true,
+    ".next": true,
+    "public/": true,
+    "node_modules/": true
+  },
+  "workbench.editor.customLabels.patterns": {
+    "**/app/**/page.tsx": "Page (${dirname(1)}/${dirname})",
+    "**/app/**/layout.tsx": "Layout (${dirname(1)}/${dirname})",
+    "**/app/**/loading.tsx": "Loading (${dirname(1)}/${dirname})",
+    "**/app/**/error.tsx": "Error (${dirname(1)}/${dirname})",
+    "**/app/**/not-found.tsx": "Not Found (${dirname(1)}/${dirname})",
+    "**/app/**/route.ts": "Route (${dirname(1)}/${dirname})"
+  }
 }

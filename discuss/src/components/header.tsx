@@ -9,7 +9,7 @@ import {
 //use our own auth helper to get the session in a server component.
 //import { auth } from '@/helpers/auth';
 
-import HeaderAuth from './header-auth';
+import HeaderAuth from './headerAuth';
 
 export default async function Header() {
   return (
