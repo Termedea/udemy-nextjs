@@ -3,7 +3,6 @@
   "files.exclude": {
     "*.config.*": true,
     ".eslintrc*": true,
-
     "*lock.json": true,
     "next-env.d.ts": true,
     "globals.d.ts": true,
